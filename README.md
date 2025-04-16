@@ -1,44 +1,65 @@
-# Libre Soluções de Governo
-## Processo Seletivo - Desenvolvimento
+# Cadastro de Contatos
 
-### Instruções Gerais
+Projeto desenvolvido em Laravel 11 com PostgreSQL, utilizando Bootstrap 5 para estilização e modais interativos. Esta aplicação realiza o cadastro de contatos com exibição de endereço detalhado via modal.
 
-1. **Fork do Repositório:** Faça um fork **PÚBLICO** deste repositório.
-2. **Tecnologias a serem utilizadas:**
-   - **Backend:** Laravel 11
-   - **Banco de Dados:** PostgreSQL
-   - **Ambiente:** Livre (preferencialmente uso do Docker, mas não é obrigatório)
-   - **Frontend:** Utilize um framework de sua preferência ou, se preferir, HTML5, JavaScript e CSS.
+## Funcionalidades
 
-### Projeto: Cadastro de Contatos
+- Cadastro de contatos com:
+  - Nome
+  - Telefone (com máscara)
+  - Idade
+  - Endereço completo (CEP, Rua, Número, Complemento, Cidade, Estado)
+- Listagem com paginação
+- Filtro por nome (case-insensitive)
+- Edição e exclusão de contatos
+- Exibição do endereço via modal (sem redirecionamento)
+- Layout com Bootstrap responsivo
 
-#### Requisitos do Projeto
+## Tecnologias utilizadas
 
-- **Página Principal:**
-  - Exibir uma lista de contatos com os seguintes campos:
-    - Sequencial
-    - Nome
-    - Telefone
-    - Idade
-  - Incluir uma barra de pesquisa para filtrar a lista de contatos.
-  - Implementar paginação para a listagem.
-  - Incluir um botão para cadastrar novos contatos.
-  - Ao lado de cada contato, fornecer três botões de ação:
-    - **Exibir Endereço:** Ao clicar, abrir um modal com o endereço do contato.
-    - **Editar:** Permitir editar as informações do contato.
-    - **Deletar:** Remover o contato da lista.
+- Laravel 11
+- PostgreSQL
+- Bootstrap 5
+- HTML, JavaScript e CSS
+- Máscara de input para telefone e CEP
 
-- **Tela de Cadastro:**
-  - Permitir o cadastro de um novo contato, incluindo os campos de:
-    - Nome
-    - Telefone
-    - Idade
-    - Endereço (cep, rua, número, complemento, cidade, estado)
+## Instalação
 
-### Estilo e Design
+1. Clone este repositório
+2. Acesse a pasta do projeto no terminal
 
-- O estilo do site (cores, fontes e disposição dos elementos) é livre. Sinta-se à vontade para usar sua criatividade e refletir sua visão de design.
+```bash
+composer install
+```
 
-### Entrega
+3. Copie o arquivo `.env.example` e crie o `.env`
 
-- Tempo de execução: 5 dias corridos (o tempo será contabilizado a partir da criação do Fork).
+```bash
+cp .env.example .env
+php artisan key:generate
+```
+
+4. Configure seu banco de dados PostgreSQL no `.env`
+
+```env
+DB_CONNECTION=pgsql
+DB_HOST=db
+DB_PORT=5432
+DB_DATABASE=seu_banco
+DB_USERNAME=seu_usuario
+DB_PASSWORD=sua_senha
+```
+# Utilize os mesmos valores definidos no docker-compose.yml
+
+5. Execute as migrações:
+
+```bash
+php artisan migrate
+```
+
+6. Inicie o servidor:
+
+```bash
+php artisan serve
+```
+>>>>>>> 78ca839 (Entrega final do projeto)
