@@ -25,7 +25,7 @@ Projeto desenvolvido em Laravel 11 com PostgreSQL, utilizando Bootstrap 5 para e
 
 ## Executando com Docker
 
-Certifique-se de ter o Docker e o Docker Compose instalador.
+Certifique-se de ter o Docker e o Docker Compose instalados.
 
 ### Passos para rodar o projeto:
 
@@ -35,7 +35,7 @@ git clone https://github.com/ArthurOliv2/teste-dev.git
 cd teste-dev
 ```
 
-2. Instale as dependencias PHP dentro do container
+2. Instale as dependências PHP dentro do container
 
 ```bash
 docker exec -it laravel-app composer install
