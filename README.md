@@ -32,7 +32,7 @@ Certifique-se de ter o Docker e o Docker Compose instalador.
 1. Clone este repositório:
 ```bash
 git clone https://github.com/ArthurOliv2/teste-dev.git
-cd teste-
+cd teste-dev
 ```
 
 2. Instale as dependencias PHP dentro do container
