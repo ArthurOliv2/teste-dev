@@ -23,43 +23,59 @@ Projeto desenvolvido em Laravel 11 com PostgreSQL, utilizando Bootstrap 5 para e
 - HTML, JavaScript e CSS
 - Máscara de input para telefone e CEP
 
-## Instalação
+## Executando com Docker
 
-1. Clone este repositório
-2. Acesse a pasta do projeto no terminal
+Certifique-se de ter o Docker e o Docker Compose instalador.
 
+### Passos para rodar o projeto:
+
+1. Clone este repositório:
 ```bash
-composer install
+git clone https://github.com/ArthurOliv2/teste-dev.git
+cd teste-
 ```
 
-3. Copie o arquivo `.env.example` e crie o `.env`
+2. Instale as dependencias PHP dentro do container
+
+```bash
+docker exec -it laravel-app composer install
+```
+
+3. Copie o arquivo .env.example e crie seu .env:
 
 ```bash
 cp .env.example .env
-php artisan key:generate
 ```
 
-4. Configure seu banco de dados PostgreSQL no `.env`
+4. Gere a chave da aplicação:
+
+```bash
+docker exec -it laravel-app php artisan key:generate
+```
+
+5. Configure o banco no arquivo .env
 
 ```env
 DB_CONNECTION=pgsql
 DB_HOST=db
 DB_PORT=5432
-DB_DATABASE=seu_banco
-DB_USERNAME=seu_usuario
-DB_PASSWORD=sua_senha
+DB_DATABASE=laravel
+DB_USERBANE=laravel
+DB_PASSWORD=secret
 ```
-# Utilize os mesmos valores definidos no docker-compose.yml
 
-5. Execute as migrações:
+6. Execute as migrações:
 
 ```bash
-php artisan migrate
+docker exec -it laravel-app php artisan migrate
 ```
 
 6. Inicie o servidor:
 
 ```bash
-php artisan serve
+docker exec -it laravel-app php artisan serve
 ```
->>>>>>> 78ca839 (Entrega final do projeto)
+## Acesse no navegador:
+```
+http://localhost:8000
+```
